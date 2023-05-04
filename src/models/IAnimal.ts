@@ -1,4 +1,4 @@
-/*export interface IAnimal {
+export interface IAnimal {
   id: number;
   name: string;
   latinName: string;
@@ -9,8 +9,8 @@
   medicine: string;
   isFed: boolean;
   lastFed: string;
-}*/
-
+}
+/*
 export class IAnimal {
   constructor(
     public id: number,
@@ -25,3 +25,4 @@ export class IAnimal {
     public lastFed: string
   ) {}
 }
+*/
