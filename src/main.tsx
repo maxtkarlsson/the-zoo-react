@@ -3,9 +3,9 @@ import ReactDOM from "react-dom/client";
 import "./index.scss";
 import { RouterProvider } from "react-router";
 import { createBrowserRouter } from "react-router-dom";
-import { Start } from "./pages/Start";
-import { Animals } from "./pages/Animals";
-import { Animal } from "./pages/Animal";
+import { Start } from "./components/Start";
+import { AnimalsPage } from "./components/AnimalsPage";
+import { AnimalPage } from "./components/AnimalPage";
 // import { Error } from "./pages/Error";
 
 const root = ReactDOM.createRoot(
@@ -20,11 +20,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/animals",
-    element: <Animals></Animals>,
+    element: <AnimalsPage></AnimalsPage>,
   },
   {
     path: "/animals/:id",
-    element: <Animal></Animal>,
+    element: <AnimalPage></AnimalPage>,
   },
 ]);
 

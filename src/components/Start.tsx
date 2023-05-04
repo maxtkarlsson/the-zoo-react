@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Nav } from "../components/Nav/Nav";
+import { Nav } from "./Nav";
 
 import axios from "axios";
 import { IAnimal } from "../models/IAnimal";

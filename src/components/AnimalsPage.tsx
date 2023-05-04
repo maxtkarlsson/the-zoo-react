@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
-import { Nav } from "../components/Nav/Nav";
-import { ShowAnimal } from "../components/ShowAnimal/ShowAnimal";
-import { ShowAnimals } from "../components/ShowAnimals/ShowAnimals";
+import { Nav } from "./Nav";
+import { ShowAnimal } from "./ShowAnimal";
 import { IAnimal } from "../models/IAnimal";
 import axios from "axios";
 import { getLocalStorage } from "../helpers/getLocalStorage";
 import { setLocalStorage } from "../helpers/setLocalStorage";
 import { Link } from "react-router-dom";
 
-export const Animals = () => {
+export const AnimalsPage = () => {
   const [animals, setAnimals] = useState<IAnimal[]>([]);
 
   const animalsFromLs = getLocalStorage();
