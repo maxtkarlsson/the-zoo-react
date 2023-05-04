@@ -37,7 +37,6 @@ export const AnimalsPage = () => {
 
   return (
     <>
-      <Nav></Nav>
       {animals.map((animal, index) => (
         <Link key={index} to={animal.id.toString()}>
           <ShowAnimal {...animal}></ShowAnimal>

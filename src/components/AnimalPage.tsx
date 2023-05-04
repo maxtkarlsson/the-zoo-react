@@ -37,7 +37,6 @@ export const AnimalPage = () => {
   } else {
     return (
       <>
-        <Nav></Nav>
         <ShowAnimal {...currentAnimal}></ShowAnimal>
         <button onClick={handleClick}>Mata djuret</button>
       </>
