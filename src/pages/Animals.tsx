@@ -6,6 +6,7 @@ import { IAnimal } from "../models/IAnimal";
 import axios from "axios";
 import { getLocalStorage } from "../helpers/getLocalStorage";
 import { setLocalStorage } from "../helpers/setLocalStorage";
+import { Link } from "react-router-dom";
 
 export const Animals = () => {
   const [animals, setAnimals] = useState<IAnimal[]>([]);
@@ -38,8 +39,11 @@ export const Animals = () => {
   return (
     <>
       <Nav></Nav>
-      <ShowAnimals></ShowAnimals>
-      <h1>Animals h1</h1>
+      {animals.map((animal, index) => (
+        <Link key={index} to={animal.id.toString()}>
+          <ShowAnimal {...animal}></ShowAnimal>
+        </Link>
+      ))}
     </>
   );
 };
