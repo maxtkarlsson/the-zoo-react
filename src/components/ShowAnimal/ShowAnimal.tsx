@@ -1,11 +1,35 @@
 import { useParams } from "react-router";
-import { Nav } from "../Nav/Nav";
+import { IAnimal } from "../../models/IAnimal";
 
-export const ShowAnimal = () => {
-  const params = useParams();
+interface AnimalProps extends IAnimal {}
+
+// State som hämtar från localstorage när det uppdateras.
+
+export const ShowAnimal = ({
+  id,
+  name,
+  latinName,
+  yearOfBirth,
+  shortDescription,
+  longDescription,
+  imageUrl,
+  medicine,
+  isFed,
+  lastFed,
+}: AnimalProps) => {
+  //const params = useParams();
   return (
-    <>
-      <h1>ShowAnimal</h1>
-    </>
+    <div>
+      <p>{id}</p>
+      <h3>{name}</h3>
+      <p>{latinName}</p>
+      <p>{yearOfBirth}</p>
+      <p>{shortDescription}</p>
+      <p>{longDescription}</p>
+      <p>{imageUrl}</p>
+      <p>{medicine}</p>
+      <p>{isFed}</p>
+      <p>{lastFed}</p>
+    </div>
   );
 };
