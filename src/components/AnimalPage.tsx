@@ -2,19 +2,34 @@ import { useParams } from "react-router";
 import { Nav } from "./Nav";
 import { ShowAnimal } from "./ShowAnimal";
 import { getLocalStorage } from "../helpers/getLocalStorage";
+import { setLocalStorage } from "../helpers/setLocalStorage";
 import { IAnimal } from "../models/IAnimal";
+import { useState } from "react";
 
 export const AnimalPage = () => {
+  const animalsFromLs = getLocalStorage();
+
+  const [animals, setAnimals] = useState<IAnimal[]>(animalsFromLs);
+
   const params = useParams();
-  const animals = getLocalStorage();
 
   const currentAnimal = animals.find(
     (animal) => animal.id.toString() === params.id
   );
 
   const handleClick = () => {
-    //Uppdatera listan, map loop
-    //Spara listan i LS
+    console.log("handleClick has been run");
+
+    animals.map((animal) => {
+      if (animal.id.toString() === params.id) {
+        animal.isFed = true;
+      } else {
+        return;
+      }
+    });
+
+    setAnimals([...animals]);
+    setLocalStorage([...animals]);
   };
 
   if (currentAnimal === undefined) {
@@ -24,7 +39,7 @@ export const AnimalPage = () => {
       <>
         <Nav></Nav>
         <ShowAnimal {...currentAnimal}></ShowAnimal>
-        <button>Mata djuret</button>
+        <button onClick={handleClick}>Mata djuret</button>
       </>
     );
   }
