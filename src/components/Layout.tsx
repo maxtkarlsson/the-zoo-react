@@ -4,8 +4,13 @@ import { Nav } from "./Nav";
 export const Layout = () => {
   return (
     <>
-      <Nav></Nav>
-      <Outlet></Outlet>
+      <header>
+        <Nav></Nav>
+      </header>
+      <main>
+        <Outlet></Outlet>
+      </main>
+      <footer></footer>
     </>
   );
 };
