@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Layout } from "./components/Layout";
-import { Start } from "./components/Start";
+import { Start } from "./components/StartPage";
 import { AnimalsPage } from "./components/AnimalsPage";
 import { AnimalPage } from "./components/AnimalPage";
 
