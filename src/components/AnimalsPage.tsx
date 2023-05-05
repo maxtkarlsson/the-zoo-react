@@ -5,6 +5,7 @@ import axios from "axios";
 import { getLocalStorage } from "../helpers/getLocalStorage";
 import { setLocalStorage } from "../helpers/setLocalStorage";
 import { Link } from "react-router-dom";
+import "./AnimalsPage.scss";
 
 export const AnimalsPage = () => {
   const [animals, setAnimals] = useState<IAnimal[]>([]);
@@ -36,7 +37,7 @@ export const AnimalsPage = () => {
   return (
     <>
       {animals.map((animal, index) => (
-        <Link key={index} to={animal.id.toString()}>
+        <Link key={index} to={animal.id.toString()} className="link">
           <ShowAnimal {...animal} longDesc={false}></ShowAnimal>
         </Link>
       ))}

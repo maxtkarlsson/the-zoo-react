@@ -25,15 +25,15 @@ export const ShowAnimal = (props: IShowAnimalProps) => {
       <div>
         <p>id - {id}</p>
         <h3>{name}</h3>
-        <p>latinName - {latinName}</p>
-        <p>yearOfBirth - {yearOfBirth}</p>
-        <p>shortDescription - {shortDescription}</p>
-        <p>longDescription - {longDescription}</p>
         <p>imageUrl - {imageUrl}</p>
-        <p>medicine - {medicine}</p>
-        {!show && <p>isFed - false</p>}
-        {show && <p>isFed - true</p>}
-        <p>lastFed - {lastFed}</p>
+        <p>Född: {yearOfBirth}</p>
+        <p>{shortDescription}</p>
+        <p>Latinsk namn: {latinName}</p>
+        <p>{longDescription}</p>
+        <p>Medicin: {medicine}</p>
+        {!show && <p>{name} är hungrig.</p>}
+        {show && <p>{name} är mätt.</p>}
+        <p>Senast matad: {lastFed}</p>
       </div>
     );
   } else {
@@ -41,7 +41,10 @@ export const ShowAnimal = (props: IShowAnimalProps) => {
       <div>
         <p>id - {id}</p>
         <h3>{name}</h3>
-        <p>latinName - {latinName}</p>
+        <p>imageUrl - {imageUrl}</p>
+        <p>{shortDescription}</p>
+        {!show && <p>{name} är hungrig.</p>}
+        {show && <p>{name} är mätt.</p>}
       </div>
     );
   }
