@@ -1,21 +1,48 @@
 import { IAnimal } from "../models/IAnimal";
 
-export const ShowAnimal = (animal: IAnimal) => {
-  const show = animal.isFed;
+interface IShowAnimalProps extends IAnimal {
+  longDesc: boolean;
+}
 
-  return (
-    <div>
-      <p>id - {animal.id}</p>
-      <h3>name - {animal.name}</h3>
-      <p>latinName - {animal.latinName}</p>
-      <p>yearOfBirth - {animal.yearOfBirth}</p>
-      <p>shortDescription - {animal.shortDescription}</p>
-      <p>longDescription - {animal.longDescription}</p>
-      <p>imageUrl - {animal.imageUrl}</p>
-      <p>medicine - {animal.medicine}</p>
-      {!show && <p>isFed - false</p>}
-      {show && <p>isFed - true</p>}
-      <p>lastFed - {animal.lastFed}</p>
-    </div>
-  );
+export const ShowAnimal = (props: IShowAnimalProps) => {
+  const {
+    id,
+    name,
+    latinName,
+    yearOfBirth,
+    shortDescription,
+    longDescription,
+    imageUrl,
+    medicine,
+    isFed,
+    lastFed,
+    longDesc,
+  } = props;
+  const show = isFed;
+
+  if (longDesc) {
+    return (
+      <div>
+        <p>id - {id}</p>
+        <h3>{name}</h3>
+        <p>latinName - {latinName}</p>
+        <p>yearOfBirth - {yearOfBirth}</p>
+        <p>shortDescription - {shortDescription}</p>
+        <p>longDescription - {longDescription}</p>
+        <p>imageUrl - {imageUrl}</p>
+        <p>medicine - {medicine}</p>
+        {!show && <p>isFed - false</p>}
+        {show && <p>isFed - true</p>}
+        <p>lastFed - {lastFed}</p>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <p>id - {id}</p>
+        <h3>{name}</h3>
+        <p>latinName - {latinName}</p>
+      </div>
+    );
+  }
 };

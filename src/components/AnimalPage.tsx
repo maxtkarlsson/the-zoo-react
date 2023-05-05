@@ -1,5 +1,4 @@
 import { useParams } from "react-router";
-import { Nav } from "./Nav";
 import { ShowAnimal } from "./ShowAnimal";
 import { getLocalStorage } from "../helpers/getLocalStorage";
 import { setLocalStorage } from "../helpers/setLocalStorage";
@@ -37,7 +36,7 @@ export const AnimalPage = () => {
   } else {
     return (
       <>
-        <ShowAnimal {...currentAnimal}></ShowAnimal>
+        <ShowAnimal {...currentAnimal} longDesc={true}></ShowAnimal>
         <button onClick={handleClick}>Mata djuret</button>
       </>
     );

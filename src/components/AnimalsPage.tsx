@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Nav } from "./Nav";
 import { ShowAnimal } from "./ShowAnimal";
 import { IAnimal } from "../models/IAnimal";
 import axios from "axios";
@@ -30,7 +29,6 @@ export const AnimalsPage = () => {
       setAnimals(animalsFromLs);
       console.log("setAnimals has been run with animalsFromLs");
     } else if (animalsFromLs.length === 0) {
-      // Kör om ls är tom lista:
       getData();
     }
   }, []);
@@ -39,7 +37,7 @@ export const AnimalsPage = () => {
     <>
       {animals.map((animal, index) => (
         <Link key={index} to={animal.id.toString()}>
-          <ShowAnimal {...animal}></ShowAnimal>
+          <ShowAnimal {...animal} longDesc={false}></ShowAnimal>
         </Link>
       ))}
     </>
