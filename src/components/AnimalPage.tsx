@@ -4,6 +4,7 @@ import { getLocalStorage } from "../helpers/getLocalStorage";
 import { setLocalStorage } from "../helpers/setLocalStorage";
 import { IAnimal } from "../models/IAnimal";
 import { useState } from "react";
+import "./AnimalPage.scss";
 
 export const AnimalPage = () => {
   const animalsFromLs = getLocalStorage();
@@ -26,8 +27,6 @@ export const AnimalPage = () => {
         animal.lastFed = date.toLocaleString("se-SE", {
           timeZone: "Europe/Rome",
         });
-
-        // animal.lastFed = date.toISOString();
       } else {
         return;
       }

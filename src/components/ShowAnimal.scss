@@ -1,26 +1,50 @@
 @use "../style/base" as b;
 
 .animal-container {
-  background-color: aqua;
   @include b.FlexColCenter;
+  @include b.for-size(desktop) {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
 }
 
 .animal-info {
-  background-color: blueviolet;
+  @include b.FlexColCenter;
 }
 
 .animal-picture {
+  padding: 1em;
   &__img {
     height: 200px;
   }
 }
 
 .animal-desc {
-  background-color: burlywood;
+  &__name {
+    margin-bottom: 0.3em;
+    &--fact {
+      margin-top: 1em;
+      margin-bottom: 0.3em;
+      font-weight: bold;
+      font-style: italic;
+    }
+  }
+  &__text {
+    &--fact {
+      font-style: italic;
+    }
+  }
 }
 
 .animal-status {
-  background-color: darkcyan;
+  align-self: flex-start;
+  margin-top: 2em;
+  &__hunger {
+    color: green;
+    &--alert {
+      color: red;
+    }
+  }
 }
 
 //////////////////////////
@@ -30,9 +54,13 @@
 
   @include b.FlexColCenter;
   border-radius: 10px;
-
   padding: 1em;
   margin-bottom: 2em;
+  @include b.for-size(desktop) {
+    @include b.FlexRowCenter;
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 
 .animal-picture-s {
@@ -47,6 +75,10 @@
   &__name {
     margin-bottom: 1em;
   }
+
+  @include b.for-size(desktop) {
+    @include b.FlexRowCenter;
+  }
 }
 
 .animal-desc-s {
@@ -57,6 +89,7 @@
 
 .animal-status-s {
   margin-top: 1em;
+  margin-left: 1em;
   &__hunger {
     &:after {
       content: "•";
