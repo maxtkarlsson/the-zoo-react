@@ -1,6 +1,7 @@
-@use "../style/base";
+@use "../style/base" as b;
 
 main {
   padding-right: 5vw;
   padding-left: 5vw;
+  @include b.FlexColCenter;
 }
