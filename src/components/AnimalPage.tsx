@@ -22,6 +22,12 @@ export const AnimalPage = () => {
     animals.map((animal) => {
       if (animal.id.toString() === params.id) {
         animal.isFed = true;
+        let date = new Date();
+        animal.lastFed = date.toLocaleString("se-SE", {
+          timeZone: "Europe/Rome",
+        });
+
+        // animal.lastFed = date.toISOString();
       } else {
         return;
       }
@@ -37,7 +43,9 @@ export const AnimalPage = () => {
     return (
       <>
         <ShowAnimal {...currentAnimal} longDesc={true}></ShowAnimal>
-        <button onClick={handleClick}>Mata djuret</button>
+        <button disabled={currentAnimal?.isFed === true} onClick={handleClick}>
+          Mata djuret
+        </button>
       </>
     );
   }
