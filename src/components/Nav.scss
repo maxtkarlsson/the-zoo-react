@@ -1,0 +1,25 @@
+@use "../style/base" as b;
+
+.nav-container {
+  @include b.FlexColCenter;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.logo {
+  font-family: "Franklin Gothic Medium";
+  font-weight: bold;
+  font-size: 3em;
+  color: rgb(14, 173, 107);
+}
+
+.nav {
+  list-style: none;
+  @include b.FlexRowCenter;
+  &__item {
+    font-size: 1.5em;
+    a {
+      text-decoration: none;
+    }
+  }
+}

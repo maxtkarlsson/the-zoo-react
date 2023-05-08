@@ -1,0 +1,76 @@
+@use "../style/base" as b;
+
+.animal-container {
+  background-color: aqua;
+  @include b.FlexColCenter;
+}
+
+.animal-info {
+  background-color: blueviolet;
+}
+
+.animal-picture {
+  &__img {
+    height: 200px;
+  }
+}
+
+.animal-desc {
+  background-color: burlywood;
+}
+
+.animal-status {
+  background-color: darkcyan;
+}
+
+//////////////////////////
+
+.animal-container-s {
+  background-color: rgb(175, 255, 201);
+
+  @include b.FlexColCenter;
+  border-radius: 10px;
+
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+.animal-picture-s {
+  &__img {
+    height: 120px;
+    margin: 0.5em;
+  }
+}
+
+.animal-info-s {
+  @include b.FlexColCenter;
+  &__name {
+    margin-bottom: 1em;
+  }
+}
+
+.animal-desc-s {
+  &__name {
+    margin-bottom: 0.3em;
+  }
+}
+
+.animal-status-s {
+  margin-top: 1em;
+  &__hunger {
+    &:after {
+      content: "•";
+      font-size: 25px;
+      margin-left: 2px;
+      color: green;
+    }
+    &--alert {
+      &:after {
+        content: "•";
+        font-size: 25px;
+        margin-left: 2px;
+        color: red;
+      }
+    }
+  }
+}
